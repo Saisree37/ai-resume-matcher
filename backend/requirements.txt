@@ -1,0 +1,14 @@
+fastapi
+uvicorn
+sqlalchemy
+psycopg
+pydantic-settings
+python-dotenv
+pymupdf
+python-multipart
+psycopg2
+langchain
+langchain_core
+langchain_text_splitters
+langchain-ollama
+langchain-chroma
