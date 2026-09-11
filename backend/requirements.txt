@@ -11,3 +11,4 @@ langchain-core
 langchain-text-splitters
 langchain-ollama
 langchain-chroma
+psycopg2

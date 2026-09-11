@@ -5,7 +5,10 @@ from langchain_chroma import Chroma
 import numpy as np
 from langchain_ollama import ChatOllama
 from langchain_core.prompts import ChatPromptTemplate
+import os
+from dotenv import load_dotenv
 
+load_dotenv()
 
 def clean_resume_text(text: str):
     lines = text.splitlines()
@@ -80,7 +83,8 @@ def create_resume_document(text):
 
 def embedding_model():
     embeddings = OllamaEmbeddings(
-    model="nomic-embed-text"
+        model=os.getenv("OLLAMA_EMBEDDING_MODEL"),
+        base_url=os.getenv("OLLAMA_BASE_URL")
     )
     return embeddings
 
@@ -148,8 +152,9 @@ def create_rag_context(documents):
 
 def create_llm():
     llm = ChatOllama(
-        model="llama3.1",
-        temperature=0
+        model=os.getenv("OLLAMA_LLM_MODEL"),
+        temperature=0,
+        base_url=os.getenv("OLLAMA_BASE_URL")
     )
     return llm
 
