@@ -95,7 +95,7 @@ def vector_store(chunks):
     vector_store = Chroma(
         collection_name="resume_collection",
         embedding_function=embeddings,
-        persist_directory="./chroma_db"
+        
     )
 
     vector_store.add_documents(chunks)
