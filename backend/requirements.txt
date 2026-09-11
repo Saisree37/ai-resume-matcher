@@ -6,9 +6,8 @@ pydantic-settings
 python-dotenv
 pymupdf
 python-multipart
-psycopg2
 langchain
-langchain_core
-langchain_text_splitters
+langchain-core
+langchain-text-splitters
 langchain-ollama
 langchain-chroma
