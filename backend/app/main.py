@@ -73,16 +73,14 @@ async def upload_file(file: UploadFile = File(...)):
                 "Python backend development experience"
             )
 
-            for result in results:
-                print(result.page_content)
+            
 
             results = search_resume(
                 store,
                 "Python backend development experience"
             )
 
-            for result in results:
-                print(result.page_content)
+            
             result = match_resume_with_job(
                 cleaned_text,
                 """
@@ -114,7 +112,6 @@ async def upload_file(file: UploadFile = File(...)):
                 "resume_context": create_rag_context(resume_context)
             })
 
-            print(response.content)
         # 5. Return structured JSON payload
         return {
             "filename": file.filename,
@@ -125,7 +122,6 @@ async def upload_file(file: UploadFile = File(...)):
         }
         
     except Exception as e:
-        print(e)
         raise HTTPException(
             status_code=500,
             detail=str(e)
